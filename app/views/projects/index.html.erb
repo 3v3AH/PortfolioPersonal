@@ -1,23 +1,37 @@
-<h1>Mis Proyectos</h1>
+<!-- app/views/projects/index.html.erb -->
 
-<%= link_to "Nuevo Proyecto", new_project_path, class: "btn btn-primary" %>
+<div class="container">
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Discover my work and case studies</p>
+  </header>
 
-<ul>
-  <% @projects.each do |project| %>
-    <li>
-      <h2><%= link_to project.title, project %></h2>
-      <p><%= project.description %></p>
-      <p>
-        🌐 <%= link_to "Sitio", project.url, target: "_blank" %> |
-        💻 <%= link_to "GitHub", project.github, target: "_blank" %>
-      </p>
-      <% if project.image_url.present? %>
-        <img src="<%= project.image_url %>" alt="<%= project.title %>" style="max-width: 300px;">
-      <% end %>
+  <div class="projects-grid">
+    <% @projects.each do |project| %>
+      <div class="project-card">
+        <img src="<%= project.image_url %>" alt="<%= project.title %>">
+        <div class="project-content">
+          <h3><%= project.title %></h3>
+          <p><%= project.description %></p>
 
-      <p><strong>Etiquetas:</strong> <%= project.tags %></p>
+          <% if project.tags.present? %>
+            <div class="tags">
+              <% project.tags.split(',').each do |tag| %>
+                <span class="tag"><%= tag.strip %></span>
+              <% end %>
+            </div>
+          <% end %>
 
-    </li>
-    <hr>
-  <% end %>
-</ul>
+          <div class="project-links">
+            <% if project.demo_url.present? %>
+              <a href="<%= project.demo_url %>" target="_blank">Live Demo</a>
+            <% end %>
+            <% if project.code_url.present? %>
+              <a href="<%= project.code_url %>" target="_blank">Code</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

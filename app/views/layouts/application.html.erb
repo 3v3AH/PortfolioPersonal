@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PortfolioFull</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/" class="logo">Evelyn Avilés</a>
+        <ul class="nav-links">
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <%= yield %>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <%= Date.today.year %> Evelyn Avilés — Todos los derechos reservados.</p>
+      </div>
+    </footer>
   </body>
 </html>

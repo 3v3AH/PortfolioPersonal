@@ -13,4 +13,64 @@
  *= require_tree .
  *= require_self
  */
+// Si usas Bootstrap, asegúrate de importar primero:
 @import "bootstrap";
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #212529;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: #000;
+}
+
+.main-content {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer {
+  background: #f1f1f1;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
