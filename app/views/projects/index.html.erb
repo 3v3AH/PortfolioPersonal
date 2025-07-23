@@ -1,0 +1,23 @@
+<h1>Mis Proyectos</h1>
+
+<%= link_to "Nuevo Proyecto", new_project_path, class: "btn btn-primary" %>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <h2><%= link_to project.title, project %></h2>
+      <p><%= project.description %></p>
+      <p>
+        🌐 <%= link_to "Sitio", project.url, target: "_blank" %> |
+        💻 <%= link_to "GitHub", project.github, target: "_blank" %>
+      </p>
+      <% if project.image_url.present? %>
+        <img src="<%= project.image_url %>" alt="<%= project.title %>" style="max-width: 300px;">
+      <% end %>
+
+      <p><strong>Etiquetas:</strong> <%= project.tags %></p>
+
+    </li>
+    <hr>
+  <% end %>
+</ul>

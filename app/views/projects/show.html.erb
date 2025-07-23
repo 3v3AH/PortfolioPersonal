@@ -1,0 +1,14 @@
+<h1><%= @project.title %></h1>
+<p><%= @project.description %></p>
+<p>🌐 <%= link_to "Sitio", @project.url, target: "_blank" %></p>
+<p>💻 <%= link_to "GitHub", @project.github, target: "_blank" %></p>
+<% if project.image_url.present? %>
+  <img src="<%= project.image_url %>" alt="<%= project.title %>" style="max-width: 300px;">
+<% end %>
+
+<p><strong>Etiquetas:</strong> <%= project.tags %></p>
+
+
+<%= link_to "Editar", edit_project_path(@project), class: "btn btn-secondary" %>
+<%= link_to "Eliminar", @project, method: :delete, data: { confirm: "¿Estás segura?" }, class: "btn btn-danger" %>
+<%= link_to "Volver", projects_path %>

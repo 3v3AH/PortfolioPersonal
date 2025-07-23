@@ -1,0 +1,34 @@
+<%= form_with(model: @project, local: true) do |form| %>
+  <div>
+    <%= form.label :title, "Título" %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Descripción" %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :url, "URL del Proyecto" %><br>
+    <%= form.url_field :url %>
+  </div>
+
+  <div>
+    <%= form.label :github, "Repositorio GitHub" %><br>
+    <%= form.url_field :github %>
+  </div>
+
+  <div>
+  <%= form.label :image_url, "URL de la imagen" %><br>
+  <%= form.url_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.label :tags, "Etiquetas (separadas por comas)" %><br>
+    <%= form.text_field :tags %>
+  </div>
+
+
+  <%= form.submit %>
+<% end %>
