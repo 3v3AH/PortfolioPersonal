@@ -1,37 +1,56 @@
-<!-- app/views/projects/index.html.erb -->
+<!-- Projects Section -->
+<section id="projects" class="container py-5">
+  <h1 class="section-title text-center">My Projects</h1>
 
-<div class="container">
-  <header>
-    <h1>My Portfolio</h1>
-    <p>Discover my work and case studies</p>
-  </header>
-
-  <div class="projects-grid">
+  <div class="row">
     <% @projects.each do |project| %>
-      <div class="project-card">
-        <img src="<%= project.image_url %>" alt="<%= project.title %>">
-        <div class="project-content">
-          <h3><%= project.title %></h3>
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card">
+          <% if project.image_url.present? %>
+            <img src="<%= project.image_url %>" alt="<%= project.name %>" class="project-image">
+          <% end %>
+
+          <h3 class="mt-2"><%= project.name %></h3>
           <p><%= project.description %></p>
 
           <% if project.tags.present? %>
-            <div class="tags">
-              <% project.tags.split(',').each do |tag| %>
-                <span class="tag"><%= tag.strip %></span>
-              <% end %>
-            </div>
+            <p><strong>Tags:</strong> <%= project.tags %></p>
           <% end %>
 
-          <div class="project-links">
+          <div class="d-flex justify-content-between mt-3">
             <% if project.demo_url.present? %>
-              <a href="<%= project.demo_url %>" target="_blank">Live Demo</a>
+              <a href="<%= project.demo_url %>" class="btn btn-outline-primary btn-sm" target="_blank">Live Demo</a>
             <% end %>
             <% if project.code_url.present? %>
-              <a href="<%= project.code_url %>" target="_blank">Code</a>
+              <a href="<%= project.code_url %>" class="btn btn-outline-secondary btn-sm" target="_blank">Code</a>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-</div>
+</section>
+
+<!-- About Section -->
+<section class="about-section bg-light" id="about">
+  <div class="container text-center">
+    <h2 class="section-title">About Me</h2>
+    <p class="lead mx-auto" style="max-width: 800px;">
+      I'm Evelyn Avilés, a Full Stack Web Developer with a passion for building clean, fast, and responsive web applications.
+      I recently graduated from Le Wagon Web Development Bootcamp, and I specialize in Ruby on Rails, JavaScript, and UI design using Bootstrap.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container text-center">
+    <h2 class="section-title">Contact</h2>
+    <p>Interested in working together or have a project in mind? Reach out!</p>
+    <div class="contact-links d-flex justify-content-center gap-3 flex-wrap mt-3">
+      <a href="mailto:evelynah97@gmail.com" class="btn btn-outline-dark">Email Me</a>
+      <a href="https://linkedin.com/in/evelyn-avilés-herrera-20b58b191" target="_blank" class="btn btn-outline-dark">LinkedIn</a>
+      <a href="https://github.com/3v3AH" target="_blank" class="btn btn-outline-dark">GitHub</a>
+    </div>
+  </div>
+</section>
