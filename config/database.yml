@@ -12,7 +12,4 @@ test:
   database: portfolio_test
 
 production:
-  <<: *default
-  database: portfolio_production
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
