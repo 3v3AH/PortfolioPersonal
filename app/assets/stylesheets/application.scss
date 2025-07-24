@@ -63,7 +63,7 @@ a {
 
 .nav-links li a:hover,
 .nav-link:hover {
-  color: #007bff;
+  color: #B0C4DE;
 }
 
 // Estilo para la sección About
@@ -83,8 +83,8 @@ a {
   p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #555;
-    margin-bottom: 1.5rem;
+    color: #212529;
+    margin-bottom: 14.4rem;
   }
 }
 
@@ -118,14 +118,14 @@ a {
     width: 100%;
     padding: 0.75rem;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #008B8B;
     font-size: 1rem;
     outline: none;
   }
 
   input:focus,
   textarea:focus {
-    border-color: #007bff;
+    border-color: #AFEEEE;
   }
 
   .form-actions {
@@ -133,8 +133,8 @@ a {
   }
 
   .btn-primary {
-    background-color: #007bff;
-    color: white;
+    background-color: #008080;
+    color: #DCDCDC;
     padding: 0.6rem 1.5rem;
     font-weight: 600;
     border-radius: 24px;
@@ -143,7 +143,7 @@ a {
   }
 
   .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #008B8B;
   }
 }
 
@@ -213,8 +213,8 @@ main {
 }
 
 .contact-links .btn:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: #008080;
+  color: #DCDCDC;
 }
 
 // Footer
@@ -227,7 +227,7 @@ main {
 }
 
 // Responsive
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .navbar-nav,
   .nav-links {
     flex-direction: column;
@@ -237,14 +237,17 @@ main {
   .section-title {
     font-size: 2rem;
   }
-}
-.navbar-brand img {
+
+  p {
+    margin-bottom: 12rem;
+  }
+
+  .navbar-brand img {
   max-height: 40px;
   width: auto;
-}
-
-@media (max-width: 768px) {
-  .navbar-brand span {
-    font-size: 1rem;
   }
+
+  .navbar-brand span {
+      font-size: 1rem;
+    }
 }
