@@ -1,34 +1,33 @@
 <!-- Projects Section -->
 <div class="container main-content">
   <h1 class="section-title text-center">My Projects</h1>
-
-  <div class="row">
-    <% @projects.each do |project| %>
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <% if project.image_url.present? %>
-            <img src="<%= project.image_url %>" alt="<%= project.title %>" class="project-image">
-          <% end %>
-          <h3><%= project.title %></h3>
-          <p><%= truncate(project.description, length: 100) %></p>
-          <% if project.tags.present? %>
-            <div class="mb-2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <% @projects.each do |project| %>
+          <div class="col-md-5 project-card m-2">
+            <% if project.image_url.present? %>
+              <img src="<%= project.image_url %>" alt="<%= project.name %>" class="project-image">
+            <% end %>
+            <h3><%= project.name %></h3>
+            <p><%= project.description %></p>
+            <% if project.tags.present? %>
               <% project.tags.split(',').each do |tag| %>
                 <span class="badge bg-secondary"><%= tag.strip %></span>
               <% end %>
+            <% end %>
+            <div class="mt-2">
+              <% if project.demo_url.present? %>
+                <%= link_to 'Demo', project.demo_url, class: 'btn btn-primary btn-sm me-1', target: '_blank' %>
+              <% end %>
+              <% if project.code_url.present? %>
+                <%= link_to 'Code', project.code_url, class: 'btn btn-outline-dark btn-sm', target: '_blank' %>
+              <% end %>
             </div>
-          <% end %>
-          <div>
-            <% if project.demo_url.present? %>
-              <%= link_to "Demo", project.demo_url, target: "_blank", class: "btn btn-outline-primary btn-sm me-2" %>
-            <% end %>
-            <% if project.code_url.present? %>
-              <%= link_to "Code", project.code_url, target: "_blank", class: "btn btn-outline-dark btn-sm" %>
-            <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
     <div class="contact-links d-flex justify-content-center gap-3 flex-wrap mt-3">
       <a href="mailto:evelynah97@gmail.com" class="btn btn-outline-dark">Email Me</a>
       <a href="https://linkedin.com/in/evelyn-avilés-herrera-20b58b191" target="_blank" class="btn btn-outline-dark">LinkedIn</a>
