@@ -13,26 +13,39 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar d-flex justify-content-between align-items-center">
-        <div class="navbar-brand">Evelyn Avilés</div>
-        <div class="navbar-nav">
-          <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#contact">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+        <img src="https://res.cloudinary.com/duirrlohe/image/upload/v1753376757/Logo_nb3inj.jpg" alt="Logo" style="height: 60px;" class="me-2">
+        <% end %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <%= link_to 'Projects', projects_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'About Me', about_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Contact', contact_path, class: "nav-link" %>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
-
-    <main class="main-content">
+    <main class="mt-5 pt-5">
       <%= yield %>
     </main>
+  </body>
+
 
     <footer class="footer">
       <div class="container">
         <p>&copy; <%= Date.today.year %> Evelyn Avilés — Todos los derechos reservados.</p>
       </div>
     </footer>
-  </body>
 </html>

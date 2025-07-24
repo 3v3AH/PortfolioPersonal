@@ -3,8 +3,8 @@
 // Reset y tipografía general
 body {
   font-family: 'Inter', sans-serif;
-  background: #f8f9fa;
-  color: #212529;
+  background-color: #f8f9fa;
+  color: #333;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -23,6 +23,7 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
+  transition: background-color 0.3s ease-in-out;
   z-index: 100;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
@@ -42,6 +43,9 @@ a {
 
 .nav-links,
 .navbar-nav {
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: color 0.3s;
   list-style: none;
   display: flex;
   gap: 1.5rem;
@@ -62,12 +66,97 @@ a {
   color: #007bff;
 }
 
+// Estilo para la sección About
+.about-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: start;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #212529;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Estilo para la sección Contact
+.contact-section {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #212529;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #007bff;
+  }
+
+  .form-actions {
+    text-align: right;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    border-radius: 24px;
+    border: none;
+    transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+}
+
 // Sección general
 section {
   padding: 80px 0;
 }
 
 // Contenido principal
+main {
+  padding: 2rem 0;
+}
+
 .main-content {
   padding: 2rem 1rem;
   max-width: 1000px;
@@ -82,6 +171,14 @@ section {
   padding: 1.5rem;
   transition: transform 0.3s;
   margin-bottom: 2rem;
+}
+
+.project-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .project-card:hover {
@@ -139,5 +236,15 @@ section {
 
   .section-title {
     font-size: 2rem;
+  }
+}
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand span {
+    font-size: 1rem;
   }
 }

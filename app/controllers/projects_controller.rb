@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
+  def home
+    @projects = Project.limit(3)
+  end
+
   def index
     @projects = Project.all
 
@@ -10,7 +14,9 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @project = Project.find(params[:id])
+  end
 
   def new
     @project = Project.new
